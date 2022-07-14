@@ -18,6 +18,9 @@ class Conta:
         else:
             print('Valor do saque maior que saldo+limite, total de {}'.format(__total))
 
+    def transferir(self, valor, destino):
+        self.sacar(valor)
+        destino.depositar(valor)
 
     def imprimir(self):
         print()
