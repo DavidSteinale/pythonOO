@@ -1,30 +1,29 @@
 class Conta:
 
     def __init__(self, numero, titular, saldo, limite): #METODO CONSTRUTOR
-        self.numero = numero
-        self.titular = titular
-        self.saldo = saldo
-        self.limite = limite
-        print("Objeto criado com sucesso..")
+        self.__numero = numero ## o "__" indica que o atributo é privado
+        self.__titular = titular
+        self.__saldo = saldo
+        self.__limite = limite
 
     def depositar(self,deposito):
-        self.saldo += deposito
-        print('Saldo realizado com sucesso, valor atual é de {:.2f}'.format(self.saldo))
+        self.__saldo += deposito
+        print('Saldo realizado com sucesso, valor atual é de {:.2f}'.format(self.__saldo))
 
     def sacar(self,sacar):
-        total = self.saldo+self.limite
-        if(sacar<total):
-            self.saldo -= sacar
-            print('Saque realizado com sucesso, valor atual é de {:.2f}'.format(self.saldo))
+        __total = self.__saldo+self.__limite
+        if(sacar<__total):
+            self.__saldo -= sacar
+            print('Saque realizado com sucesso, valor atual é de {:.2f}'.format(self.__saldo))
         else:
-            print('Valor do saque maior que saldo+limite, total de {}'.format(total))
+            print('Valor do saque maior que saldo+limite, total de {}'.format(__total))
 
 
     def imprimir(self):
         print()
         print('INFORMAÇÂO DA CONTA:')
-        print('Número da conta:', self.numero)
-        print('Titular da conta:', self.titular)
-        print('Saldo da conta {} é {:.2f}'.format(self.numero,self.saldo))
-        print('Limite:{:.2f}'.format(self.limite))
+        print('Número da conta:', self.__numero)
+        print('Titular da conta:', self.__titular)
+        print('Saldo da conta {} é {:.2f}'.format(self.__numero,self.__saldo))
+        print('Limite:{:.2f}'.format(self.__limite))
         print()
