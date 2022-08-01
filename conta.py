@@ -30,3 +30,9 @@ class Conta:
         print('Saldo da conta {} é {:.2f}'.format(self.__numero,self.__saldo))
         print('Limite:{:.2f}'.format(self.__limite))
         print()
+
+    def get_saldo(self):
+        return self.__saldo
+
+    def set_limiti(self,limite):
+        self.__limite = limite
