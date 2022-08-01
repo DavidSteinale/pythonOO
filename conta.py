@@ -31,8 +31,10 @@ class Conta:
         print('Limite:{:.2f}'.format(self.__limite))
         print()
 
-    def get_saldo(self):
+    @property
+    def saldo(self):
         return self.__saldo
 
-    def set_limiti(self,limite):
+    #@limite.setter
+    def limite(self,limite):
         self.__limite = limite
